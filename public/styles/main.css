@@ -27,6 +27,10 @@ header .link  a~a{
   margin-left: 30px;
 }
 
+header .chosen {
+  color: aquamarine;
+}
+
 body {
   width: 100%;
   min-height: 90vh;
