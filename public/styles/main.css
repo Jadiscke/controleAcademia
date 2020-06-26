@@ -14,6 +14,7 @@ header {
   justify-content: center;
   width: 100%;
   padding: 15px 0;
+  max-height: 40px;
 }
 
 header .link {
@@ -25,3 +26,20 @@ header .link {
 header .link  a~a{
   margin-left: 30px;
 }
+
+body {
+  width: 100%;
+  min-height: 90vh;
+  background-color: darkslateblue;
+  color: aliceblue;
+  text-align: center;
+}
+
+a {
+  color: aliceblue;
+  transition: ease-in-out 500ms;
+}
+ a:hover {
+   font-size: larger;
+   transition: ease-in-out 500ms;
+ }
