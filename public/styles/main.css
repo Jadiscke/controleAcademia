@@ -1,1 +1,27 @@
 /* CSS */
+
+
+* {
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 0;
+}
+
+header .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .link  a~a{
+  margin-left: 30px;
+}
