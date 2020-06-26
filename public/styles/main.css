@@ -1,5 +1,17 @@
 /* CSS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 90vh;
+  background-color: darkslateblue;
+  color: aliceblue;
+  text-align: center;
+}
 
 * {
   outline: none;
@@ -13,8 +25,9 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 15px 0;
-  max-height: 40px;
+  padding: 30px 0;
+  max-height: 75px;
+  backdrop-filter: brightness(75%);
 }
 
 header .link {
@@ -29,14 +42,6 @@ header .link  a~a{
 
 header .chosen {
   color: aquamarine;
-}
-
-body {
-  width: 100%;
-  min-height: 90vh;
-  background-color: darkslateblue;
-  color: aliceblue;
-  text-align: center;
 }
 
 a {
