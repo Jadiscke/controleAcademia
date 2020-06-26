@@ -58,3 +58,11 @@ a {
    font-size: larger;
    transition: ease-in-out 500ms;
  }
+
+ /* CARD */
+
+ .card {
+   background-color: white;
+   width: 800px;
+   height: 600px;
+ }
