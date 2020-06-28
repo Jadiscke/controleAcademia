@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
+  "nodemonConfig": {
+    "ignore": ["*.json"],
+    "delay": "2500"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm-run-all -p nodemon browsersync",
