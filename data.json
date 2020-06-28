@@ -2,17 +2,19 @@
   "instructors": [
     {
       "avatar_url": "http://google.com",
-      "name": "Vinicius Jadiscke de Souza Tasso",
-      "birth": "2020-06-06",
-      "gender": "F",
-      "services": "Musculação, Ginástica"
+      "name": "jadiscke",
+      "birth": 1259712000000,
+      "gender": "M",
+      "services": "Musculação, Ginástica",
+      "created_at": 1593369727645
     },
     {
       "avatar_url": "http://google.com",
-      "name": "tales of demons",
-      "birth": "2020-06-02",
+      "name": "Vinicius Jadiscke de Souza Tasso",
+      "birth": 1343347200000,
       "gender": "M",
-      "services": "Crossfit"
+      "services": "Crossfit",
+      "created_at": 1593369895840
     }
   ]
 }
