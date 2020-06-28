@@ -20,13 +20,13 @@ exports.post = function(req,res){
 
   
   data.instructors.push({
-    avatar_url,
-    birth,
-    created_at,
     id,
+    avatar_url,
     name,
+    gender,
+    birth,
     services,
-    gender
+    created_at,
   });
 
   fs.writeFile("data.json",JSON.stringify(data, null, 2), function(err){
