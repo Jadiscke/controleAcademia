@@ -1,5 +1,5 @@
 const fs = require('fs');
-const data = require('./data.json');
+const data = require('../data.json');
 
 // create
 exports.post = function(req,res){
@@ -10,9 +10,24 @@ exports.post = function(req,res){
       return res.send('Please, fill all fields');
     }
   }
-  req.body.birth = Date.parse(req.body.birth);
-  req.body.created_at = Date.now();
-  data.instructors.push(req.body);
+
+  const {avatar_url, name, services, gender } = req.body;
+  const created_at = Date.now();
+  const id = Number(data.instructors.length) + 1;
+  let { birth } = req.body;
+  birth = Date.parse(birth);
+  
+
+  
+  data.instructors.push({
+    avatar_url,
+    birth,
+    created_at,
+    id,
+    name,
+    services,
+    gender
+  });
 
   fs.writeFile("data.json",JSON.stringify(data, null, 2), function(err){
     if(err) return res.send('Write File Error');
