@@ -1,5 +1,6 @@
 const fs = require('fs');
 const data = require('../data.json');
+const { age } = require('./utils');
 
 // show
 
@@ -13,15 +14,14 @@ exports.show = function(req,res) {
     return res.send("INSTRUCTOR NOT FOUND");
   }
   
-  const milisecondsYear = Date.parse(1971,1,1);
-  console.log(milisecondsYear);
+  
 
   const instructor = {
     ...foundInstructor,
-    age: parseInt((Date.now() - foundInstructor.birth)/milisecondsYear,10),
+    age: age(foundInstructor.birth),
     gender: foundInstructor.gender == 'M' ? 'Masculino': 'Feminino',
     services: foundInstructor.services.split(','),
-    created_at: new Intl.DateTimeFormat('en-GB').format(foundInstructor.created_at),
+    created_at: new Date(foundInstructor.created_at).toLocaleDateString('pt-BR'),
 
   }
   return res.render('instructors/show', {instructor});
