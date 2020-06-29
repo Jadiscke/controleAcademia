@@ -13,7 +13,18 @@ exports.show = function(req,res) {
     return res.send("INSTRUCTOR NOT FOUND");
   }
   
-  return res.send(foundInstructor);
+  const milisecondsYear = Date.parse(1971,1,1);
+  console.log(milisecondsYear);
+
+  const instructor = {
+    ...foundInstructor,
+    age: parseInt((Date.now() - foundInstructor.birth)/milisecondsYear,10),
+    gender: foundInstructor.gender == 'M' ? 'Masculino': 'Feminino',
+    services: foundInstructor.services.split(','),
+    created_at: new Intl.DateTimeFormat('en-GB').format(foundInstructor.created_at),
+
+  }
+  return res.render('instructors/show', {instructor});
 }
 
 // create
