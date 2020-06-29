@@ -50,11 +50,11 @@ header .chosen {
   filter: drop-shadow(0 5px 10px);
 }
 
-a {
+ .link a {
   color: aliceblue;
   transition: ease-in-out 500ms;
 }
- a:hover {
+ .link a:hover {
    font-size: larger;
    transition: ease-in-out 500ms;
  }
@@ -158,7 +158,7 @@ input::placeholder{
   font-size: 16px;
   font-weight: normal;
 }
-
+a.button,
 button[type="submit"] {
   padding: 8px 32px;
   background-color: var(--primary-color);
@@ -167,4 +167,14 @@ button[type="submit"] {
   margin-top: 32px;
   width: 100%;
   font-size: 16px;
+}
+
+a.button {
+  display: block;
+  text-align: center;
+}
+
+a.button:hover,
+button[type="submit"]:hover{
+  filter: brightness(110%);
 }
