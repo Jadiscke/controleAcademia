@@ -1,6 +1,7 @@
 const fs = require('fs');
 const data = require('../data.json');
 const { age } = require('./utils');
+Intl = require('intl');
 
 // show
 
@@ -21,9 +22,10 @@ exports.show = function(req,res) {
     age: age(foundInstructor.birth),
     gender: foundInstructor.gender == 'M' ? 'Masculino': 'Feminino',
     services: foundInstructor.services.split(','),
-    created_at: new Date(foundInstructor.created_at).toLocaleDateString('pt-BR'),
+    created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at),
 
   }
+  console.log(instructor.created_at);
   return res.render('instructors/show', {instructor});
 }
 

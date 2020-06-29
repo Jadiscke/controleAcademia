@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/server.js",
   "nodemonConfig": {
-    "ignore": ["*.json"],
+    "ignore": [
+      "*.json"
+    ],
     "delay": "2500"
   },
   "scripts": {
@@ -18,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "intl": "^1.2.5",
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
