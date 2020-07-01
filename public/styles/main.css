@@ -178,3 +178,8 @@ a.button:hover,
 button[type="submit"]:hover{
   filter: brightness(110%);
 }
+
+#form-delete button[type="submit"] {
+  background-color: brown;
+  margin-top: 8px;
+}
