@@ -98,6 +98,7 @@ exports.put = function(req,res){
     ...foundInstructor,
     ...req.body,
     birth: Date.parse(req.body.birth),
+    id: Number(foundInstructor.id)
   }
 
   data.instructors[index] = instructor;
