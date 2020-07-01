@@ -21,7 +21,7 @@ exports.show = function(req,res) {
     ...foundInstructor,
     age: age(foundInstructor.birth),
     gender: foundInstructor.gender == 'M' ? 'Masculino': 'Feminino',
-    services: foundInstructor.services.split(','),
+    services: String(foundInstructor.services).split(','),
     created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at),
 
   }
@@ -127,5 +127,9 @@ exports.put = function(req,res){
   }
 
   exports.index =  function(req,res){
-    return res.render('instructors/index', { dataInstructors: data.instructors });
+    const dataInstructors = data.instructors;
+    for (const instructor of dataInstructors){
+      instructor.services = String(instructor.services).split(",")
+    }
+    return res.render('instructors/index', { dataInstructors });
   }
