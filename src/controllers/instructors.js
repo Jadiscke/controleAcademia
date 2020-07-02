@@ -1,9 +1,9 @@
 const fs = require('fs');
-const data = require('../data.json');
-const { age, date } = require('./utils');
+const data = require('../../data.json');
+const { age, date } = require('../utils');
 Intl = require('intl');
 
-// show
+
 
 exports.show = function(req,res) {
   const { id } = req.params;
@@ -28,7 +28,10 @@ exports.show = function(req,res) {
   return res.render('instructors/show', {instructor});
 }
 
-// create
+exports.create = function(req,res){
+  return res.render('instructors/create');
+}
+
 exports.post = function(req,res){
   const keys = Object.keys(req.body);
 
@@ -62,7 +65,7 @@ exports.post = function(req,res){
     return res.redirect(`/instructors/${id}`)
   });
 }
-// Show Edit
+
 exports.edit = function(req,res){
 
   const { id } = req.params;
@@ -77,7 +80,7 @@ exports.edit = function(req,res){
   foundInstructor.birth = date(foundInstructor.birth);
   return res.render('instructors/edit', {instructor: foundInstructor})
 }
-// Update
+
 exports.put = function(req,res){
   const { id } = req.body;
   let index = 0;
@@ -108,27 +111,27 @@ exports.put = function(req,res){
     return res.redirect(`/instructors/${id}`)
   });
 }
-  // delete
 
-  exports.delete = function(req,res){
-    const { id } = req.body;
-  
-    const filteredInstructor = data.instructors.filter(function(instructor){
-      return instructor.id != id
-    });
-    
-    data.instructors = filteredInstructor;
-    fs.writeFile("data.json", JSON.stringify(data, null,2), function(err){
-      if (err) return res.send("Write error!")
-  
-      return res.redirect(`/instructors`)
-    });
-  }
+exports.delete = function(req,res){
+  const { id } = req.body;
 
-  exports.index =  function(req,res){
-    const dataInstructors = data.instructors;
-    for (const instructor of dataInstructors){
-      instructor.services = String(instructor.services).split(",")
-    }
-    return res.render('instructors/index', { dataInstructors });
+  const filteredInstructor = data.instructors.filter(function(instructor){
+    return instructor.id != id
+  });
+  
+  data.instructors = filteredInstructor;
+  fs.writeFile("data.json", JSON.stringify(data, null,2), function(err){
+    if (err) return res.send("Write error!")
+
+    return res.redirect(`/instructors`)
+  });
+}
+
+exports.index =  function(req,res){
+  const dataInstructors = data.instructors;
+  for (const instructor of dataInstructors){
+    instructor.services = String(instructor.services).split(",")
   }
+  return res.render('instructors/index', { dataInstructors });
+}
+
