@@ -38,7 +38,7 @@ exports.post = function(req,res){
     }
   }
 
-  const {avatar_url, name, gender } = req.body;
+  const {avatar_url, name, email, gender, blood,height, weight, } = req.body;
   const id = Number(data.members.length) + 1;
   let { birth } = req.body;
   birth = Date.parse(birth);
@@ -49,8 +49,12 @@ exports.post = function(req,res){
     id,
     avatar_url,
     name,
+    email,
     gender,
     birth,
+    blood,
+    height,
+    weight
   });
 
   fs.writeFile("data.json",JSON.stringify(data, null, 2), function(err){
