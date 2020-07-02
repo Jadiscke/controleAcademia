@@ -128,10 +128,10 @@ exports.delete = function(req,res){
 }
 
 exports.index =  function(req,res){
-  const dataInstructors = data.instructors;
-  for (const instructor of dataInstructors){
+  const instructors = data.instructors;
+  for (const instructor of instructors){
     instructor.services = String(instructor.services).split(",")
   }
-  return res.render('instructors/index', { dataInstructors });
+  return res.render('instructors/index', { instructors });
 }
 

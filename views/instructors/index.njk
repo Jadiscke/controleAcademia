@@ -2,6 +2,7 @@
 {% block content %}
 
     <div class="card table-container">
+      <a href="/instructors/create">Novo</a>
       <table>
         <thead>
           <tr>
@@ -12,7 +13,7 @@
           
         </thead>
         <tbody>
-          {% for instructor in dataInstructors %}
+          {% for instructor in instructors %}
             <tr>
               <td>
                 <div>

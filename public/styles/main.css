@@ -238,7 +238,8 @@ button[type="submit"]:hover{
   text-align: center;
 }
 
-.table-container tbody tr td:last-child a {
+.table-container tbody tr td:last-child a,
+.table-container > a {
   background-color: var(--primary-color);
   padding: 8px 16px;
   text-decoration: none;
@@ -248,8 +249,15 @@ button[type="submit"]:hover{
   border-radius: 6px;
 }
 
-.table-container tbody tr td:last-child a:hover {
-  filter: brightness(125%);
+.table-container > a {
+  display: inline-block;
+  margin: 0 0 16px 8px;
+
+}
+
+.table-container tbody tr td:last-child a:hover,
+.table-container > a:hover {
+  filter: brightness(150%);
 }
 
 

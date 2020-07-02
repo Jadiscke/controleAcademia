@@ -122,11 +122,8 @@ exports.delete = function(req,res){
 }
 
 exports.index =  function(req,res){
-  const dataMembers = data.members;
-  for (const member of dataMembers){
-    member.services = String(member.services).split(",")
-  }
-  return res.render('members/index', { dataMembers });
+  const members = data.members;
+  return res.render('members/index', { members });
 }
 
 
