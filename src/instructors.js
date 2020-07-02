@@ -25,7 +25,6 @@ exports.show = function(req,res) {
     created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at),
 
   }
-  console.log(instructor.created_at);
   return res.render('instructors/show', {instructor});
 }
 
