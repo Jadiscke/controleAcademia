@@ -43,7 +43,8 @@ exports.post = function(req,res){
 
   const {avatar_url, name, services, gender } = req.body;
   const created_at = Date.now();
-  const id = Number(data.instructors.length) + 1;
+  const lastInstructor = data.instructors[data.instructors.length - 1];
+  const id = lastInstructor ?  lastInstructor.id + 1 : 1;
   let { birth } = req.body;
   birth = Date.parse(birth);
   
