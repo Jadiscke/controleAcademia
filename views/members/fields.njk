@@ -1,4 +1,3 @@
-
 <div class="item">
   <div>Avatar URL</div>
   <div>
@@ -47,48 +46,32 @@
   <div class="item">
     <div>Tipo Sanguíneo</div>
     <div>
-    <select name="blood">
-      <option value="A1"
-        {%  if member.blood == "A1" %} selected {% endif %}
-      >
-      A+
-      </option>
-      <option value="A0"
-        {%  if member.blood == "A0" %} selected {% endif %}
-      >
-      A-
-      </option>
-      <option value="B1"
-        {%  if member.blood == "B1" %} selected {% endif %}
-      >
-      B+
-      </option>
-      <option value="B0"
-        {%  if member.blood == "B0" %} selected {% endif %}
-      >
-      B-
-      </option>
-      <option value="O1"
-        {%  if member.blood == "O1" %} selected {% endif %}
-      >
-      O+
-      </option>
-      <option value="O0"
-        {%  if member.blood == "O0" %} selected {% endif %}
-      >
-      O-
-      </option>
-      <option value="AB1"
-        {%  if member.blood == "AB1" %} selected {% endif %}
-      >
-      AB+
-      </option>
-      <option value="AB0"
-        {%  if member.blood == "AB2" %} selected {% endif %}
-      >
-      AB-
-      </option>
-    </select>
+      <select name="blood">
+        <option value="A1" {%  if member.blood == "A1" %} selected="selected" {% endif %}>
+          A+
+        </option>
+        <option value="A0" {%  if member.blood == "A0" %} selected="selected" {% endif %}>
+          A-
+        </option>
+        <option value="B1" {%  if member.blood == "B1" %} selected="selected" {% endif %}>
+          B+
+        </option>
+        <option value="B0" {%  if member.blood == "B0" %} selected="selected" {% endif %}>
+          B-
+        </option>
+        <option value="O1" {%  if member.blood == "O1" %} selected="selected" {% endif %}>
+          O+
+        </option>
+        <option value="O0" {%  if member.blood == "O0" %} selected="selected" {% endif %}>
+          O-
+        </option>
+        <option value="AB1" {%  if member.blood == "AB1" %} selected="selected" {% endif %}>
+          AB+
+        </option>
+        <option value="AB0" {%  if member.blood == "AB2" %} selected="selected" {% endif %}>
+          AB-
+        </option>
+      </select>
     </div>
 
   </div>
@@ -101,7 +84,6 @@
 
   </div>
 
-
   <div class="item">
     <div>Peso (Kg)</div>
     <div>
@@ -110,7 +92,6 @@
 
   </div>
 
-</div>
 </div>
 
 <button type="submit">Salvar</button>

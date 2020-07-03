@@ -20,6 +20,7 @@ exports.show = function(req,res) {
     ...foundMember,
     age: age(foundMember.birth),
     gender: foundMember.gender == 'M' ? 'Masculino': 'Feminino',
+    blood: foundMember.blood.endsWith('1') ? foundMember.blood.replace('1','+') : foundMember.blood.replace('0','-'),
 
 
   }
@@ -39,7 +40,8 @@ exports.post = function(req,res){
   }
 
   const {avatar_url, name, email, gender, blood,height, weight, } = req.body;
-  const id = Number(data.members.length) + 1;
+  const lastMember = data.members[data.members.length - 1];
+  const id = lastMember ?  lastMember.id + 1 : 1;
   let { birth } = req.body;
   birth = Date.parse(birth);
   
