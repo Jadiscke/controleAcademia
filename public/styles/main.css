@@ -168,6 +168,10 @@ button[type="submit"] {
   width: 100%;
   font-size: 16px;
 }
+select {
+  font-size: 1.2rem!important;
+}
+
 
 a.button {
   display: block;
@@ -270,7 +274,7 @@ button[type="submit"]:hover{
   flex-wrap: wrap;
   padding: 4px;
 }
-.table-container tbody tr td:nth-child(2) div span {
+.table-container tbody tr td div span {
   display: inline-block;
   padding: 8px 16px;
   background-color: var(--secondary-color);

@@ -8,6 +8,8 @@
           <tr>
             <th>Membro</th>
             <th>Sangue</th>
+            <th>Peso</th>
+            <th>Altura</th>
             <th>Ação</th>
           </tr>
           
@@ -23,7 +25,22 @@
                 
               </td>
               <td>
-                <span>{{member.blood}}</span>
+                <div>
+                  <span>{{member.blood}}</span>
+                </div>
+                
+              </td>
+              <td>
+                <div>
+                  <span>{{member.weight}}</span>
+                </div>
+                
+              </td>
+              <td>
+                <div>
+                  <span>{{member.height}}</span>
+                </div>
+                
               </td>
               <td>
                 <a href="/members/{{member.id}}">ver</a>

@@ -130,7 +130,6 @@ exports.delete = function(req,res){
 exports.index =  function(req,res){
   const members = data.members;
   for (const member of members){
-    console.log(member);
     member.blood = member.blood.endsWith('1') ? member.blood.replace('1','+') : member.blood.replace('0','-');
   }
   return res.render('members/index', { members });
