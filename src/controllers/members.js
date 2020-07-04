@@ -20,7 +20,6 @@ exports.show = function(req,res) {
     ...foundMember,
     age: age(foundMember.birth),
     gender: foundMember.gender == 'M' ? 'Masculino': 'Feminino',
-    blood: foundMember.blood.endsWith('1') ? foundMember.blood.replace('1','+') : foundMember.blood.replace('0','-'),
 
 
   }
@@ -129,9 +128,6 @@ exports.delete = function(req,res){
 
 exports.index =  function(req,res){
   const members = data.members;
-  for (const member of members){
-    member.blood = member.blood.endsWith('1') ? member.blood.replace('1','+') : member.blood.replace('0','-');
-  }
   return res.render('members/index', { members });
 }
 
