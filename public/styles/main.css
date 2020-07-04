@@ -214,6 +214,7 @@ button[type="submit"]:hover{
   text-transform: uppercase;
   color: #777;
   font-size: 14px;
+  padding-left: 1.5rem;
 }
 
 .table-container tbody tr:last-child td {
@@ -235,8 +236,9 @@ button[type="submit"]:hover{
   box-shadow: 3px 1px 6px -2px black;
   border: 2px solid white;
 }
-.table-container tr th:last-child {
+.table-container tr th:last-child{
   text-align: center;
+  padding-left: 0;
 }
 .table-container tr td:last-child {
   text-align: center;
@@ -274,9 +276,11 @@ button[type="submit"]:hover{
   flex-wrap: wrap;
   padding: 4px;
 }
-.table-container tbody tr td div span {
+.table-container tbody tr td:nth-child(n+2) div span {
   display: inline-block;
   padding: 8px 16px;
+  text-align: center;
+  min-width: 100px;
   background-color: var(--secondary-color);
   border-radius: 16px;
   color: #777;
