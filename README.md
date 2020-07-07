@@ -34,8 +34,8 @@ This project consists of Gym Controller Web App using NodeJs and Nunjucks. See i
 
 ### Built With
 
-* [NodeJS]()
-* [Nunjucks]()
+* [NodeJS](https://nodejs.org/en/)
+* [Nunjucks](https://mozilla.github.io/nunjucks/)
 
 
 
