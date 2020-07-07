@@ -30,7 +30,7 @@
 ## About The Project
 
 LaunchBase Bootcamp Project by [RocketSeat](https://rocketseat.com.br/).
-This project consists of Gym Controller Web App using NodeJs and Nunjucks. See it`s [usage](#Usage).
+This project consists of Gym Controller Web App using NodeJs and Nunjucks. See it's [usage](#Usage).
 
 ### Built With
 
