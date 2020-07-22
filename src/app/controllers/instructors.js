@@ -5,7 +5,18 @@ Intl = require('intl');
 module.exports = {
   index(req,res){
 
-    return res.render('instructors/index');
+    db.query(`SELECT * FROM instructors`, function(err,results){
+      if (err) return res.send('Database Error');
+
+      for (let row of results.rows){
+        row.services = row.services.split(',');
+      }
+
+
+      return res.render('instructors/index', {instructors: results.rows});
+    });
+
+    
   },
   create(req,res){
     return res.render('instructors/create');
