@@ -1,5 +1,5 @@
 const db = require('../config/db');
-
+const { date } = require('../lib/utils');
 module.exports = {
   all(callback) {
     db.query(`SELECT * FROM instructors`, function(err,results){

@@ -1,5 +1,4 @@
-const { age, date, formatInstructors } = require('../lib/utils');
-const db = require('../config/db');
+const { formatInstructors } = require('../lib/utils');
 const Instructor = require('../models/instructor');
 Intl = require('intl');
 
