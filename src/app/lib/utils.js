@@ -7,6 +7,12 @@ module.exports ={
   date(timestamp){
     // return date to HTML format
     return new Date(timestamp).toISOString().slice(0,10);
+  },
+  formatInstructors(instructors){
+    for (const instructor of instructors){
+      instructor.services = instructor.services.split(','); 
+    }
+    return instructors
   }
 
 }
