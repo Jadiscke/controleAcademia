@@ -1,4 +1,4 @@
-const { formatInstructors } = require('../lib/utils');
+const { formatInstructors, formatInstructor } = require('../lib/utils');
 const Instructor = require('../models/instructor');
 Intl = require('intl');
 
@@ -32,6 +32,10 @@ module.exports = {
     
     },
   show(req,res){
+    Instructor.find(req.params.id,function(instructor){
+      formatInstructor(instructor);
+      return res.render('instructors/show',{instructor});
+    })
     },
   edit(req,res){
     
