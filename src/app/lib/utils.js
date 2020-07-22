@@ -1,3 +1,5 @@
+const instructor = require("../models/instructor");
+
 module.exports ={
   age(timestamp){
     const milisecondsYear = Date.parse(1971,1,1);
@@ -13,6 +15,10 @@ module.exports ={
       instructor.services = instructor.services.split(','); 
     }
     return instructors
+  },
+  formatInstructor(instructor){
+    instructor.services = instructor.services.split(',');
+    return instructor
   }
 
 }
