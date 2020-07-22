@@ -1,8 +1,5 @@
-const fs = require('fs');
-const data = require('../../data.json');
-const { age, date } = require('../utils');
+const { age, date } = require('../lib/utils');
 Intl = require('intl');
-
 
 exports.show = function(req,res) {
   const { id } = req.params;
