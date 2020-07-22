@@ -40,7 +40,11 @@ module.exports = {
     });
   },
   find(id, callback){
-    db.query(`SELECT * FROM instructors WHERE id = ${id}`, function(err,results){
+    db.query(`
+    SELECT * 
+    FROM instructors 
+    WHERE id = ${id}`, 
+    function(err,results){
       if(err) return res.send(err);
 
       callback(results.rows[0]);
