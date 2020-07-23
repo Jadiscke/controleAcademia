@@ -35,5 +35,4 @@ module.exports ={
     instructor.services = instructor.services.split(',');
     return instructor
   }
-
 }
