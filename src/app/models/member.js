@@ -2,7 +2,11 @@ const db = require('../config/db');
 const { date } = require('../lib/utils');
 module.exports = {
   all(callback) {
-    db.query(`SELECT * FROM members`, function(err,results){
+    db.query(`
+      SELECT * 
+      FROM members
+      ORDER BY ASC
+      `, function(err,results){
       if (err) throw `Database Erro! ${err}`;
       
       callback(results.rows);
