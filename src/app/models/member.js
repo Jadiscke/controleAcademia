@@ -5,7 +5,7 @@ module.exports = {
     db.query(`
       SELECT * 
       FROM members
-      ORDER BY ASC
+      ORDER BY name ASC
       `, function(err,results){
       if (err) throw `Database Erro! ${err}`;
       
