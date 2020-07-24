@@ -60,6 +60,20 @@ module.exports = {
       return
     });
   },
+  findBy(filter,callback){
+    db.query(`
+    SELECT *
+    FROM members
+    WHERE members.name ILIKE '%${filter}%' 
+    ORDER BY name ASC
+    `, function(err,results){
+    if (err) throw `Database Erro! ${err}`;
+    
+    callback(results.rows);
+    });
+    return
+
+  },
   update(data, callback){
     const query =`
     UPDATE members SET
