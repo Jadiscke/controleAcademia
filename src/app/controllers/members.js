@@ -28,17 +28,7 @@ module.exports = {
   show(req, res) {
     Member.find(req.params.id, function (member) {
       member.birth = date(member.birth).birthDay;
-
-      Member.instructorsSelectOptions(function(instructorOptions){
-        console.log(member);
-        const instructor = instructorOptions.find(function(instructor){
-          if(instructor.id == member.instructor_id){
-            return instructor
-          }
-        });
-        return res.render("members/show", { member, instructor });
-      });
-      return
+      return res.render("members/show", { member });
     });
   },
   edit(req, res) {
