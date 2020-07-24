@@ -28,6 +28,7 @@ module.exports = {
   show(req, res) {
     Member.find(req.params.id, function (member) {
       member.birth = date(member.birth).birthDay;
+      member.gender = member.gender == 'M' ? 'Masculino' : 'Feminino';
       return res.render("members/show", { member });
     });
   },
