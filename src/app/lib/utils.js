@@ -30,6 +30,7 @@ module.exports ={
     return instructors
   },
   formatInstructor(instructor){
+    instructor.gender = instructor.gender = 'M' ? 'Masculino' : 'Feminino';
     instructor.created_at = date(instructor.created_at).format;
     instructor.age = age(instructor.birth);
     instructor.services = instructor.services.split(',');
