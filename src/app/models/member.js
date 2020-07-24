@@ -24,7 +24,7 @@ module.exports = {
         blood,
         weight,
         height,
-        intructor_id
+        instructor_id
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
       RETURNING id
     `
@@ -49,7 +49,7 @@ module.exports = {
   },
   find(id, callback){
     db.query(`
-    SELECT *, instructors.name as instructor_name
+    SELECT members.*, instructors.name AS instructor_name
     FROM members
     LEFT JOIN instructors ON (members.instructor_id = instructors.id) 
     WHERE members.id = ${id}`, 
