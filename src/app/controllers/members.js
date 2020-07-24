@@ -8,7 +8,9 @@ module.exports = {
     });
   },
   create(req, res) {
-    return res.render("members/create");
+    Member.instructorsSelectOptions(function(instructorOptions){
+      return res.render("members/create", { instructorOptions });
+    });
   },
   post(req, res) {
     const keys = Object.keys(req.body);
@@ -26,13 +28,26 @@ module.exports = {
   show(req, res) {
     Member.find(req.params.id, function (member) {
       member.birth = date(member.birth).birthDay;
-      return res.render("members/show", { member });
+
+      Member.instructorsSelectOptions(function(instructorOptions){
+        console.log(member);
+        const instructor = instructorOptions.find(function(instructor){
+          if(instructor.id == member.instructor_id){
+            return instructor
+          }
+        });
+        return res.render("members/show", { member, instructor });
+      });
+      return
     });
   },
   edit(req, res) {
     Member.find(req.params.id, function (member) {
       member.birth = date(member.birth).iso;
-      return res.render("members/edit", { member });
+      Member.instructorsSelectOptions(function(instructorOptions){
+        return res.render("members/edit", { member, instructorOptions });
+      });
+      return
     });
 
     return;
