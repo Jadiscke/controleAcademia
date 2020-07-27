@@ -1,21 +1,26 @@
 const { formatInstructors, formatInstructor, date } = require("../lib/utils");
 const Instructor = require("../models/instructor");
+const instructor = require("../models/instructor");
 
 module.exports = {
   index(req, res) {
-    const { filter } = req.query;
+    let { filter, page, limit } = req.query;
+    page = page || 1;
+    limit = limit || 2;
+    let offset = (page - 1) * limit;
 
-    if (filter) {
-      Instructor.findBy(filter, function(instructors){
-        formatInstructors(instructors);
-        return res.render("instructors/index", { instructors, filter });
-      });
-    }else{
-      Instructor.all(function (instructors) {
+    const params = {
+      filter,
+      page,
+      limit,
+      offset,
+      callback(instructors){
         formatInstructors(instructors);
         return res.render("instructors/index", { instructors });
-      });
+      }
     }
+
+    Instructor.paginate(params);
     
   },
   create(req, res) {
