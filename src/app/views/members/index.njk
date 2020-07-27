@@ -3,7 +3,7 @@
 
     <div class="card table-container">
        <div class="header">
-          <a class="button" href="/instructors/create">Novo</a>
+          <a class="button" href="/members/create">Novo</a>
           <form action="/members" method="GET">
 
             
@@ -63,6 +63,11 @@
           {% endfor %}
         </tbody>
       </table>
+      <div class="pagination"
+        data-page={{pagination.page}}
+        data-total={{pagination.total}}
+        data-filter={{filter}}
+      >
     </div>
 
 {% endblock %}

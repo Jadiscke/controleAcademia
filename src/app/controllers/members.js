@@ -3,22 +3,31 @@ const Member = require("../models/member");
 
 module.exports = {
   index(req, res) {
+    let { filter, page, limit } = req.query;
+    page = page || 1;
+    limit = limit || 2;
+    let offset = (page - 1) * limit;
 
-    const { filter } = req.query;
-
-    if (filter) {
-      Member.findBy(filter, function(members){
-        return res.render("members/index", { members, filter });
-      });
-    }else{
-      Member.all(function (members) {
-        return res.render("members/index", { members });
-      });
+    const params = {
+      filter,
+      page,
+      limit,
+      offset,
+      callback(members){
+        const pagination = {
+          total: members[0] ? Math.ceil(members[0].total / limit) : 0,
+          page
+        }
+        return res.render("members/index", { members, filter, pagination});
+      }
     }
+
+    Member.paginate(params);
+    
   },
   create(req, res) {
-    Member.instructorsSelectOptions(function(instructorOptions){
-      return res.render("members/create", { instructorOptions });
+    Member.instructorsSelectOptions(function(memberOptions){
+      return res.render("members/create", { memberOptions });
     });
   },
   post(req, res) {
@@ -44,8 +53,8 @@ module.exports = {
   edit(req, res) {
     Member.find(req.params.id, function (member) {
       member.birth = date(member.birth).iso;
-      Member.instructorsSelectOptions(function(instructorOptions){
-        return res.render("members/edit", { member, instructorOptions });
+      Member.membersSelectOptions(function(memberOptions){
+        return res.render("members/edit", { member, memberOptions });
       });
       return
     });
