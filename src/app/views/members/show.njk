@@ -10,13 +10,13 @@
         <h3>Detalhes</h3>
 
         <div class="item">
-          <div>Instrutor</div>
+          <div>Nome</div>
           <div>{{member.name}}</div>
         </div>
 
         <div class="item">
-          <div>Idade</div>
-          <div>{{member.age}} Anos</div>
+          <div>Aniversário</div>
+          <div>{{member.birth}}</div>
         </div>
 
         <div class="item">
@@ -38,6 +38,11 @@
           <div>Altura</div>
           
           <div>{{member.height}} cm</div>
+        </div>
+
+        <div class="item">
+          <div>Instrutor</div>
+          <div>{{member.instructor_name}}</div>
         </div>
 
         <a class='button' href="/members/{{member.id}}/edit">Editar</a>

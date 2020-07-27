@@ -2,7 +2,21 @@
 {% block content %}
 
     <div class="card table-container">
-      <a href="/members/create">Novo</a>
+       <div class="header">
+          <a class="button" href="/members/create">Novo</a>
+          <form action="/members" method="GET">
+
+            
+            <input 
+            type="text"
+            name="filter"
+            placeholder="Nome"
+            value={{filter}}
+            >
+
+            <button type="submit">Filtrar</button>
+          </form>
+        </div>
       <table>
         <thead>
           <tr>
@@ -32,13 +46,13 @@
               </td>
               <td>
                 <div>
-                  <span>{{member.weight}}</span>
+                  <span>{{member.weight}} Kg</span>
                 </div>
                 
               </td>
               <td>
                 <div>
-                  <span>{{member.height}}</span>
+                  <span>{{member.height}} cm</span>
                 </div>
                 
               </td>
@@ -49,6 +63,11 @@
           {% endfor %}
         </tbody>
       </table>
+      <div class="pagination"
+        data-page={{pagination.page}}
+        data-total={{pagination.total}}
+        data-filter={{filter}}
+      >
     </div>
 
 {% endblock %}
